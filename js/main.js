@@ -63,13 +63,17 @@ function updateCanvas() {
 var r=Math.floor(Math.random() * 255);
 var g=Math.floor(Math.random() * 255);
 var b=Math.floor(Math.random() * 255);
+var blop=Math.floor(Math.random() * 2);
 
 function drawPixels() {
 
     for(var i=0; i<canvas.width; i++){
         for(var j=0; j<canvas.height; j++){
-            
-            if(ps[i][j])drawPixel(i,j, r+ps[i][j],g+ps[i][j]/2,b+ps[i][j],255);
+            if(blop==1){
+                if(ps[i][j])drawPixel(i,j, r-ps[i][j],g-ps[i][j]/2,b-ps[i][j],255);
+            }else{
+                if(ps[i][j])drawPixel(i,j, r+ps[i][j],g+ps[i][j]/2,b+ps[i][j],255);
+            }
         }
     }
 }
